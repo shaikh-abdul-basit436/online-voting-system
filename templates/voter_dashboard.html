@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Voter Dashboard{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Voter dashboard</p><h1>Welcome, {{ voter.full_name }}</h1><p>Review the election details and your current voting status.</p></div><span class="role-badge">Voter #{{ voter.id }}</span></div>
+  <div class="summary-grid voter-summary">
+    <article class="summary-card status-card"><span class="card-label">Voting Status</span><strong>{{ 'Vote Submitted' if voter.has_voted else 'Not Voted Yet' }}</strong><span class="status-pill {{ 'complete' if voter.has_voted else 'pending' }}">{{ 'Recorded' if voter.has_voted else 'Action pending' }}</span></article>
+    <article class="summary-card"><span class="card-label">Election Status</span><strong>{{ election_status }}</strong><span>{{ election_name }}</span></article>
+    <article class="summary-card"><span class="card-label">Available Candidates</span><strong>{{ candidate_count }}</strong><a href="{{ url_for('candidates') }}">View candidate details →</a></article>
+  </div>
+  <div class="dashboard-grid">
+    <section class="panel"><div class="panel-heading"><span class="number-marker">01</span><div><h2>Voting instructions</h2><p>Read each step before submitting.</p></div></div>
+      <ol class="instruction-list"><li>Review all candidate profiles.</li><li>Open the voting page and select one candidate.</li><li>Check your selection, then confirm the vote.</li><li>Your submission is final and cannot be changed.</li></ol>
+    </section>
+    <section class="action-panel"><p class="eyebrow">Next step</p>
+      {% if voter.has_voted %}<h2>Your vote is recorded</h2><p>No further voting action is available for this account.</p><span class="button button-disabled">Vote Already Submitted</span>
+      {% else %}<h2>Ready to vote?</h2><p>You can submit exactly one vote in this demonstration election.</p><a class="button button-primary" href="{{ url_for('vote') }}">Cast Vote</a>{% endif %}
+    </section>
+  </div>
+</div></section>
+{% endblock %}

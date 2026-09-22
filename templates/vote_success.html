@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Vote Submitted{% endblock %}
+{% block content %}
+<section class="message-page"><div class="message-card success-card">
+  <div class="success-mark" aria-hidden="true">✓</div><p class="eyebrow">Submission complete</p><h1>Vote Submitted Successfully</h1><p>Your vote has been recorded successfully. This account cannot submit another vote.</p>
+  <dl class="receipt"><div><dt>Election</dt><dd>{{ election_name }}</dd></div><div><dt>Date and time</dt><dd>{{ voted_at or 'Recorded' }}</dd></div><div><dt>Status</dt><dd>Vote recorded</dd></div></dl>
+  <a class="button button-primary" href="{{ url_for('voter_dashboard') }}">Go to Dashboard</a>
+</div></section>
+{% endblock %}

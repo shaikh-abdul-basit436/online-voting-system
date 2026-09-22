@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Administration</p><h1>Election overview</h1><p>Current activity for {{ election_name }}.</p></div><span class="status-pill complete">{{ election_status }}</span></div>
+  <div class="summary-grid admin-summary">
+    <article class="summary-card"><span class="card-label">Total Voters</span><strong>{{ summary.total_voters }}</strong><a href="{{ url_for('voters') }}">View register →</a></article>
+    <article class="summary-card"><span class="card-label">Votes Cast</span><strong>{{ summary.total_votes }}</strong><span>{{ summary.participation }}% participation</span></article>
+    <article class="summary-card"><span class="card-label">Not Voted</span><strong>{{ summary.remaining }}</strong><span>Registered voters remaining</span></article>
+    <article class="summary-card"><span class="card-label">Candidates</span><strong>{{ summary.total_candidates }}</strong><a href="{{ url_for('manage_candidates') }}">Manage candidates →</a></article>
+  </div>
+  <div class="dashboard-grid">
+    <section class="panel"><div class="panel-heading"><span class="number-marker">%</span><div><h2>Participation</h2><p>Votes cast against total registration.</p></div></div><div class="progress-track large"><span style="width: {{ summary.participation }}%"></span></div><p class="progress-caption"><strong>{{ summary.participation }}%</strong> turnout</p></section>
+    <section class="panel"><div class="panel-heading"><span class="number-marker">↗</span><div><h2>Recent activity</h2><p>Only submission times are shown.</p></div></div>
+      <ul class="activity-list">{% for vote in recent_votes %}<li><span>Vote recorded</span><time>{{ vote.voted_at }}</time></li>{% else %}<li><span>No votes recorded yet.</span></li>{% endfor %}</ul>
+    </section>
+  </div>
+</div></section>
+{% endblock %}

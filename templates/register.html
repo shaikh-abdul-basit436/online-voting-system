@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Voter Registration{% endblock %}
+{% block content %}
+<section class="form-page"><div class="form-shell form-shell-wide">
+  <div class="form-heading"><p class="eyebrow">New voter</p><h1>Create your account</h1><p>Register once to take part in the demo election.</p></div>
+  <form method="post" class="stack-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Full Name<input type="text" name="full_name" value="{{ request.form.get('full_name','') }}" maxlength="60" autocomplete="name" required></label>
+    <label>Username<input type="text" name="username" value="{{ request.form.get('username','') }}" maxlength="20" pattern="[A-Za-z0-9_]{4,20}" autocomplete="username" required><small>4–20 letters, numbers, or underscores</small></label>
+    <div class="form-grid">
+      <label>Password<input type="password" name="password" minlength="8" autocomplete="new-password" required></label>
+      <label>Confirm Password<input type="password" name="confirm_password" minlength="8" autocomplete="new-password" required></label>
+    </div>
+    <button class="button button-primary button-full" type="submit">Register</button>
+  </form>
+  <p class="form-foot">Already registered? <a href="{{ url_for('voter_login') }}">Voter login</a></p>
+</div></section>
+{% endblock %}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic demonstration online voting system">
+  <title>{% block title %}Online Voting System{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="{{ url_for('index') }}" aria-label="Online Voting System home">
+        <span class="brand-mark" aria-hidden="true">OV</span>
+        <span><strong>Online Voting System</strong><small>Academic demonstration</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        {% if session.get('role') == 'voter' %}
+          <a href="{{ url_for('voter_dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('candidates') }}">Candidates</a>
+          <a href="{{ url_for('vote') }}">Vote</a>
+          <form action="{{ url_for('logout') }}" method="post" class="nav-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-link" type="submit">Logout</button></form>
+        {% elif session.get('role') == 'admin' %}
+          <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('manage_candidates') }}">Candidates</a>
+          <a href="{{ url_for('voters') }}">Voters</a>
+          <a href="{{ url_for('results') }}">Results</a>
+          <form action="{{ url_for('logout') }}" method="post" class="nav-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-link" type="submit">Logout</button></form>
+        {% else %}
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('voter_login') }}">Voter Login</a>
+          <a href="{{ url_for('register') }}">Register</a>
+          <a href="{{ url_for('admin_login') }}">Admin</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <div class="demo-strip">Academic Demo — Not a real election</div>
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="container alerts" aria-live="polite">
+          {% for category, message in messages %}<div class="alert alert-{{ category }}">{{ message }}</div>{% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>Online Voting System · B.Sc. IT Mini Project</span>
+      <span>{{ election_name }}</span>
+    </div>
+  </footer>
+</body>
+</html>

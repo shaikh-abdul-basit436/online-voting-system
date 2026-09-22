@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Cast Vote{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container narrow-container">
+  <div class="page-header"><div><p class="eyebrow">Official ballot</p><h1>Select one candidate</h1><p>Your selection is not submitted until you confirm it.</p></div><span class="role-badge">One choice only</span></div>
+  <form method="post" id="vote-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <fieldset class="ballot"><legend class="sr-only">Choose a candidate</legend>
+      {% for candidate in candidates %}
+      <label class="ballot-option"><input type="radio" name="candidate_id" value="{{ candidate.id }}" required><span class="custom-radio"></span><span class="ballot-symbol">{{ candidate.symbol[:1] if candidate.symbol else candidate.name[:1] }}</span><span><strong>{{ candidate.name }}</strong><small>{{ candidate.party }} · {{ candidate.symbol or 'No symbol' }}</small></span></label>
+      {% else %}<div class="empty-state">No candidates are available. Please contact the administrator.</div>{% endfor %}
+    </fieldset>
+    <div class="confirmation-box"><strong>You are about to submit your vote.</strong><p>Once submitted, your vote cannot be changed.</p></div>
+    <div class="page-actions"><a class="button button-secondary" href="{{ url_for('voter_dashboard') }}">Cancel</a><button class="button button-primary" type="submit" {% if not candidates %}disabled{% endif %}>Confirm Vote</button></div>
+  </form>
+</div></section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Election Results{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Live calculation</p><h1>Election results</h1><p>Automatically calculated from recorded votes.</p></div><span class="status-pill complete">Database results</span></div>
+  <div class="result-totals"><div><span>Total Votes Cast</span><strong>{{ total_votes }}</strong></div><div><span>Registered Voters</span><strong>{{ total_voters }}</strong></div><div><span>Turnout</span><strong>{{ turnout }}%</strong></div></div>
+  <section class="panel results-panel"><div class="results-head"><span>Candidate</span><span>Votes</span><span>Percentage</span></div>
+    {% for result in results %}<div class="result-row"><div class="result-person"><span class="mini-symbol">{{ result.symbol[:1] if result.symbol else result.name[:1] }}</span><span><strong>{{ result.name }}</strong><small>{{ result.party }}</small></span></div><strong class="vote-number">{{ result.vote_count }}</strong><div class="result-bar-wrap"><span>{{ result.percentage }}%</span><div class="progress-track"><span style="width: {{ result.percentage }}%"></span></div></div></div>{% else %}<div class="empty-state">No candidates available.</div>{% endfor %}
+  </section>
+  <p class="privacy-note">Results show totals only. Individual voter choices remain hidden from the admin interface.</p>
+</div></section>
+{% endblock %}

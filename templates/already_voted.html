@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Vote Already Submitted{% endblock %}
+{% block content %}
+<section class="message-page"><div class="message-card">
+  <div class="info-mark" aria-hidden="true">i</div><p class="eyebrow">Voting status</p><h1>Vote Already Submitted</h1><p>This voter account has already recorded a vote. A second submission is not permitted.</p>
+  <a class="button button-primary" href="{{ url_for('voter_dashboard') }}">Go to Dashboard</a>
+</div></section>
+{% endblock %}

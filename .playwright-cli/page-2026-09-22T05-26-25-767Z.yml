@@ -1,0 +1,27 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - strong [ref=e7]: Online Voting System
+      - button "Menu" [ref=e8]
+  - generic [ref=e9]: Academic Demo — Not a real election
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - paragraph [ref=e14]: Administration
+        - heading "Admin sign in" [level=1] [ref=e15]
+        - paragraph [ref=e16]: Restricted access for election management.
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - text: Username
+          - textbox "Username" [active] [ref=e19]
+        - generic [ref=e20]:
+          - text: Password
+          - textbox "Password" [ref=e21]
+        - button "Admin Login" [ref=e22] [cursor=pointer]
+  - contentinfo [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e25]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e26]: Student Council Demo Election

@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - generic [ref=e6]:
+          - strong [ref=e7]: Online Voting System
+          - generic [ref=e8]: Academic demonstration
+      - navigation "Main navigation" [ref=e9]:
+        - link "Dashboard" [ref=e10] [cursor=pointer]:
+          - /url: /voter/dashboard
+        - link "Candidates" [ref=e11] [cursor=pointer]:
+          - /url: /candidates
+        - link "Vote" [ref=e12] [cursor=pointer]:
+          - /url: /vote
+        - button "Logout" [ref=e14] [cursor=pointer]
+  - generic [ref=e15]: Academic Demo — Not a real election
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Official ballot
+          - heading "Select one candidate" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Your selection is not submitted until you confirm it.
+        - generic [ref=e24]: One choice only
+      - generic [ref=e25]:
+        - group "Choose a candidate" [ref=e26]:
+          - generic [ref=e27]: Choose a candidate
+          - generic [ref=e28] [cursor=pointer]:
+            - radio "B Aarav Sharma Student Unity · Book" [ref=e29]
+            - generic [ref=e31]: B
+            - generic [ref=e32]:
+              - strong [ref=e33]: Aarav Sharma
+              - generic [ref=e34]: Student Unity · Book
+          - generic [ref=e35] [cursor=pointer]:
+            - radio "S Zoya Khan Campus Progress · Star" [ref=e36]
+            - generic [ref=e38]: S
+            - generic [ref=e39]:
+              - strong [ref=e40]: Zoya Khan
+              - generic [ref=e41]: Campus Progress · Star
+          - generic [ref=e42] [cursor=pointer]:
+            - radio "L Rohan Mehta Student Voice · Lamp" [ref=e43]
+            - generic [ref=e45]: L
+            - generic [ref=e46]:
+              - strong [ref=e47]: Rohan Mehta
+              - generic [ref=e48]: Student Voice · Lamp
+        - generic [ref=e49]:
+          - strong [ref=e50]: You are about to submit your vote.
+          - paragraph [ref=e51]: Once submitted, your vote cannot be changed.
+        - generic [ref=e52]:
+          - link "Cancel" [ref=e53] [cursor=pointer]:
+            - /url: /voter/dashboard
+          - button "Confirm Vote" [ref=e54] [cursor=pointer]
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e58]: Student Council Demo Election

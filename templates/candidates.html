@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Candidates{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Candidate directory</p><h1>Meet the candidates</h1><p>Fictional candidates for the Student Council Demo Election.</p></div><span class="role-badge">{{ candidates|length }} candidates</span></div>
+  <div class="candidate-grid">
+    {% for candidate in candidates %}
+    <article class="candidate-card"><div class="symbol-box" aria-hidden="true">{{ candidate.symbol[:1] if candidate.symbol else candidate.name[:1] }}</div><div><span class="candidate-party">{{ candidate.party }}</span><h2>{{ candidate.name }}</h2><p class="symbol-line">Symbol: <strong>{{ candidate.symbol or 'Not assigned' }}</strong></p><p>{{ candidate.description or 'No description provided.' }}</p></div></article>
+    {% else %}<div class="empty-state">No candidates are currently available.</div>{% endfor %}
+  </div>
+  <div class="page-actions"><a class="button button-secondary" href="{{ url_for('voter_dashboard') }}">Back to Dashboard</a><a class="button button-primary" href="{{ url_for('vote') }}">Continue to Vote</a></div>
+</div></section>
+{% endblock %}

@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - generic [ref=e6]:
+          - strong [ref=e7]: Online Voting System
+          - generic [ref=e8]: Academic demonstration
+      - navigation "Main navigation" [ref=e9]:
+        - link "Dashboard" [ref=e10] [cursor=pointer]:
+          - /url: /voter/dashboard
+        - link "Candidates" [ref=e11] [cursor=pointer]:
+          - /url: /candidates
+        - link "Vote" [ref=e12] [cursor=pointer]:
+          - /url: /vote
+        - button "Logout" [ref=e14] [cursor=pointer]
+  - generic [ref=e15]: Academic Demo — Not a real election
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Voter dashboard
+          - heading "Welcome, Kabir Singh" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Review the election details and your current voting status.
+        - generic [ref=e24]: "Voter #2"
+      - generic [ref=e25]:
+        - article [ref=e26]:
+          - generic [ref=e27]: Voting Status
+          - strong [ref=e28]: Not Voted Yet
+          - generic [ref=e29]: Action pending
+        - article [ref=e30]:
+          - generic [ref=e31]: Election Status
+          - strong [ref=e32]: Active
+          - generic [ref=e33]: Student Council Demo Election
+        - article [ref=e34]:
+          - generic [ref=e35]: Available Candidates
+          - strong [ref=e36]: "3"
+          - link "View candidate details →" [ref=e37] [cursor=pointer]:
+            - /url: /candidates
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: "01"
+            - generic [ref=e42]:
+              - heading "Voting instructions" [level=2] [ref=e43]
+              - paragraph [ref=e44]: Read each step before submitting.
+          - list [ref=e45]:
+            - listitem [ref=e46]: Review all candidate profiles.
+            - listitem [ref=e47]: Open the voting page and select one candidate.
+            - listitem [ref=e48]: Check your selection, then confirm the vote.
+            - listitem [ref=e49]: Your submission is final and cannot be changed.
+        - generic [ref=e50]:
+          - paragraph [ref=e51]: Next step
+          - heading "Ready to vote?" [level=2] [ref=e52]
+          - paragraph [ref=e53]: You can submit exactly one vote in this demonstration election.
+          - link "Cast Vote" [ref=e54] [cursor=pointer]:
+            - /url: /vote
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e58]: Student Council Demo Election

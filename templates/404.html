@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block title %}{{ title or 'Page Not Found' }}{% endblock %}
+{% block content %}<section class="message-page"><div class="message-card"><span class="error-code">{{ code or 404 }}</span><h1>{{ title or 'Page not found' }}</h1><p>{{ message or 'The page you requested does not exist.' }}</p><a class="button button-primary" href="{{ url_for('index') }}">Return Home</a></div></section>{% endblock %}

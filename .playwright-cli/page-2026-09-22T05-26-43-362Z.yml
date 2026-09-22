@@ -1,0 +1,72 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - generic [ref=e6]:
+          - strong [ref=e7]: Online Voting System
+          - generic [ref=e8]: Academic demonstration
+      - navigation "Main navigation" [ref=e9]:
+        - link "Dashboard" [ref=e10] [cursor=pointer]:
+          - /url: /admin/dashboard
+        - link "Candidates" [ref=e11] [cursor=pointer]:
+          - /url: /admin/candidates
+        - link "Voters" [ref=e12] [cursor=pointer]:
+          - /url: /admin/voters
+        - link "Results" [ref=e13] [cursor=pointer]:
+          - /url: /admin/results
+        - button "Logout" [ref=e15] [cursor=pointer]
+  - generic [ref=e16]: Academic Demo — Not a real election
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Live calculation
+          - heading "Election results" [level=1] [ref=e23]
+          - paragraph [ref=e24]: Automatically calculated from recorded votes.
+        - generic [ref=e25]: Database results
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Total Votes Cast
+          - strong [ref=e29]: "1"
+        - generic [ref=e30]:
+          - generic [ref=e31]: Registered Voters
+          - strong [ref=e32]: "2"
+        - generic [ref=e33]:
+          - generic [ref=e34]: Turnout
+          - strong [ref=e35]: 50.0%
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]: Candidate
+          - generic [ref=e39]: Votes
+          - generic [ref=e40]: Percentage
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: S
+            - generic [ref=e44]:
+              - strong [ref=e45]: Zoya Khan
+              - generic [ref=e46]: Campus Progress
+          - strong [ref=e47]: "1"
+          - generic [ref=e49]: 100.0%
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: B
+            - generic [ref=e55]:
+              - strong [ref=e56]: Aarav Sharma
+              - generic [ref=e57]: Student Unity
+          - strong [ref=e58]: "0"
+          - generic [ref=e60]: 0.0%
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]: L
+            - generic [ref=e65]:
+              - strong [ref=e66]: Rohan Mehta
+              - generic [ref=e67]: Student Voice
+          - strong [ref=e68]: "0"
+          - generic [ref=e70]: 0.0%
+      - paragraph [ref=e72]: Results show totals only. Individual voter choices remain hidden from the admin interface.
+  - contentinfo [ref=e73]:
+    - generic [ref=e74]:
+      - generic [ref=e75]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e76]: Student Council Demo Election

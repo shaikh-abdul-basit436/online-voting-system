@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - generic [ref=e6]:
+          - strong [ref=e7]: Online Voting System
+          - generic [ref=e8]: Academic demonstration
+      - navigation "Main navigation" [ref=e9]:
+        - link "Dashboard" [ref=e10] [cursor=pointer]:
+          - /url: /admin/dashboard
+        - link "Candidates" [ref=e11] [cursor=pointer]:
+          - /url: /admin/candidates
+        - link "Voters" [ref=e12] [cursor=pointer]:
+          - /url: /admin/voters
+        - link "Results" [ref=e13] [cursor=pointer]:
+          - /url: /admin/results
+        - button "Logout" [ref=e15] [cursor=pointer]
+  - generic [ref=e16]: Academic Demo — Not a real election
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Administration
+          - heading "Manage candidates" [level=1] [ref=e23]
+          - paragraph [ref=e24]: Add, update, or remove demo election candidates.
+        - generic [ref=e25]: 3 records
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - heading "Add candidate" [level=2] [ref=e28]
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - text: Candidate Name
+              - textbox "Candidate Name" [ref=e31]
+            - generic [ref=e32]:
+              - text: Party / Group
+              - textbox "Party / Group" [ref=e33]
+            - generic [ref=e34]:
+              - text: Symbol
+              - textbox "Symbol" [ref=e35]
+            - generic [ref=e36]:
+              - text: Description
+              - textbox "Description" [ref=e37]
+            - button "Add Candidate" [ref=e39] [cursor=pointer]
+        - generic [ref=e40]:
+          - heading "Candidate list" [level=2] [ref=e41]
+          - generic [ref=e42]:
+            - article [ref=e43]:
+              - generic [ref=e44]: B
+              - generic [ref=e45]:
+                - strong [ref=e46]: Aarav Sharma
+                - generic [ref=e47]: Student Unity · Book
+                - generic [ref=e48]: 0 votes recorded
+              - generic [ref=e49]:
+                - link "Edit" [ref=e50] [cursor=pointer]:
+                  - /url: /admin/candidates/1/edit
+                - button "Delete" [ref=e52] [cursor=pointer]
+            - article [ref=e53]:
+              - generic [ref=e54]: S
+              - generic [ref=e55]:
+                - strong [ref=e56]: Zoya Khan
+                - generic [ref=e57]: Campus Progress · Star
+                - generic [ref=e58]: 1 vote recorded
+              - generic [ref=e59]:
+                - link "Edit" [ref=e60] [cursor=pointer]:
+                  - /url: /admin/candidates/2/edit
+                - button "Delete" [ref=e62] [cursor=pointer]
+            - article [ref=e63]:
+              - generic [ref=e64]: L
+              - generic [ref=e65]:
+                - strong [ref=e66]: Rohan Mehta
+                - generic [ref=e67]: Student Voice · Lamp
+                - generic [ref=e68]: 0 votes recorded
+              - generic [ref=e69]:
+                - link "Edit" [ref=e70] [cursor=pointer]:
+                  - /url: /admin/candidates/3/edit
+                - button "Delete" [ref=e72] [cursor=pointer]
+  - contentinfo [ref=e73]:
+    - generic [ref=e74]:
+      - generic [ref=e75]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e76]: Student Council Demo Election

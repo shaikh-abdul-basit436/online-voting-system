@@ -1,0 +1,41 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - generic [ref=e6]:
+          - strong [ref=e7]: Online Voting System
+          - generic [ref=e8]: Academic demonstration
+      - navigation "Main navigation" [ref=e9]:
+        - link "Home" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Voter Login" [ref=e11] [cursor=pointer]:
+          - /url: /login
+        - link "Register" [ref=e12] [cursor=pointer]:
+          - /url: /register
+        - link "Admin" [ref=e13] [cursor=pointer]:
+          - /url: /admin/login
+  - generic [ref=e14]: Academic Demo — Not a real election
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - paragraph [ref=e19]: Voter access
+        - heading "Sign in to vote" [level=1] [ref=e20]
+        - paragraph [ref=e21]: Use your registered voter username and password.
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - text: Username
+          - textbox "Username" [active] [ref=e24]
+        - generic [ref=e25]:
+          - text: Password
+          - textbox "Password" [ref=e26]
+        - button "Login" [ref=e27] [cursor=pointer]
+      - paragraph [ref=e28]:
+        - text: New voter?
+        - link "Create an account" [ref=e29] [cursor=pointer]:
+          - /url: /register
+  - contentinfo [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e33]: Student Council Demo Election

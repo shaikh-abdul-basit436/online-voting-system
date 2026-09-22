@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Voter Login{% endblock %}
+{% block content %}
+<section class="form-page"><div class="form-shell">
+  <div class="form-heading"><p class="eyebrow">Voter access</p><h1>Sign in to vote</h1><p>Use your registered voter username and password.</p></div>
+  <form method="post" class="stack-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Username<input type="text" name="username" autocomplete="username" maxlength="20" required autofocus></label>
+    <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+    <button class="button button-primary button-full" type="submit">Login</button>
+  </form>
+  <p class="form-foot">New voter? <a href="{{ url_for('register') }}">Create an account</a></p>
+</div></section>
+{% endblock %}

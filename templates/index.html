@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Online Voting System · Academic Demo{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Student Council Demo Election</p>
+      <h1>A clear, simple way to cast one vote.</h1>
+      <p class="hero-lead">The system allows registered voters to authenticate themselves, view candidates, cast one vote, and securely record the result.</p>
+      <div class="button-row">
+        <a class="button button-primary" href="{{ url_for('voter_login') }}">Voter Login</a>
+        <a class="button button-secondary" href="{{ url_for('register') }}">Register</a>
+        <a class="text-link" href="{{ url_for('admin_login') }}">Admin Login →</a>
+      </div>
+    </div>
+    <aside class="election-note" aria-label="Election details">
+      <div class="note-header"><span class="status-dot"></span><span>Election status</span></div>
+      <h2>{{ election_name }}</h2>
+      <dl class="detail-list"><div><dt>Status</dt><dd>{{ election_status }}</dd></div><div><dt>Vote rule</dt><dd>One voter, one vote</dd></div><div><dt>Purpose</dt><dd>Academic demonstration</dd></div></dl>
+    </aside>
+  </div>
+</section>
+<section class="steps-section">
+  <div class="container">
+    <p class="eyebrow">How it works</p><h2 class="section-title">Six straightforward steps</h2>
+    <ol class="steps-grid">
+      {% for item in ['Register','Login','View Candidates','Cast Vote','Vote Recorded','Results Generated'] %}
+      <li><span>0{{ loop.index }}</span><strong>{{ item }}</strong></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

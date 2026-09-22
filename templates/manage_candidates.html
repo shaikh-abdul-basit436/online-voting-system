@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Manage Candidates{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Administration</p><h1>Manage candidates</h1><p>Add, update, or remove demo election candidates.</p></div><span class="role-badge">{{ candidates|length }} records</span></div>
+  <div class="management-grid">
+    <section class="panel sticky-panel"><h2>{{ 'Edit candidate' if edit_candidate else 'Add candidate' }}</h2>
+      <form method="post" action="{{ url_for('edit_candidate', candidate_id=edit_candidate.id) if edit_candidate else url_for('manage_candidates') }}" class="stack-form compact-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label>Candidate Name<input name="name" maxlength="60" required value="{{ edit_candidate.name if edit_candidate else '' }}"></label>
+        <label>Party / Group<input name="party" maxlength="60" required value="{{ edit_candidate.party if edit_candidate else '' }}"></label>
+        <label>Symbol<input name="symbol" maxlength="30" value="{{ edit_candidate.symbol if edit_candidate else '' }}"></label>
+        <label>Description<textarea name="description" maxlength="250" rows="4">{{ edit_candidate.description if edit_candidate else '' }}</textarea></label>
+        <div class="button-row"><button class="button button-primary" type="submit">{{ 'Save Changes' if edit_candidate else 'Add Candidate' }}</button>{% if edit_candidate %}<a class="button button-secondary" href="{{ url_for('manage_candidates') }}">Cancel</a>{% endif %}</div>
+      </form>
+    </section>
+    <section class="panel"><h2>Candidate list</h2>
+      <div class="admin-candidate-list">{% for candidate in candidates %}<article class="admin-candidate"><div class="mini-symbol">{{ candidate.symbol[:1] if candidate.symbol else candidate.name[:1] }}</div><div class="candidate-main"><strong>{{ candidate.name }}</strong><span>{{ candidate.party }} · {{ candidate.symbol or 'No symbol' }}</span><small>{{ candidate.vote_count }} vote{{ '' if candidate.vote_count == 1 else 's' }} recorded</small></div><div class="row-actions"><a class="button button-small button-secondary" href="{{ url_for('edit_candidate', candidate_id=candidate.id) }}">Edit</a><form method="post" action="{{ url_for('delete_candidate', candidate_id=candidate.id) }}" data-confirm="Delete {{ candidate.name }}? This cannot be undone."><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="button button-small button-danger" type="submit">Delete</button></form></div></article>{% else %}<div class="empty-state">No candidates added.</div>{% endfor %}</div>
+    </section>
+  </div>
+</div></section>
+{% endblock %}

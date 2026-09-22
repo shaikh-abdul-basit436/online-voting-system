@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Registered Voters{% endblock %}
+{% block content %}
+<section class="page-section"><div class="container">
+  <div class="page-header"><div><p class="eyebrow">Voter register</p><h1>Registered voters</h1><p>Account details and submission status. Vote choices are not displayed.</p></div><span class="role-badge">{{ voters|length }} voters</span></div>
+  <div class="table-wrap"><table><thead><tr><th>ID</th><th>Full Name</th><th>Username</th><th>Voting Status</th><th>Registration Date</th></tr></thead><tbody>{% for voter in voters %}<tr><td>#{{ voter.id }}</td><td><strong>{{ voter.full_name }}</strong></td><td>{{ voter.username }}</td><td><span class="status-pill {{ 'complete' if voter.has_voted else 'pending' }}">{{ 'Voted' if voter.has_voted else 'Not Voted' }}</span></td><td>{{ voter.created_at }}</td></tr>{% else %}<tr><td colspan="5">No voters registered.</td></tr>{% endfor %}</tbody></table></div>
+</div></section>
+{% endblock %}

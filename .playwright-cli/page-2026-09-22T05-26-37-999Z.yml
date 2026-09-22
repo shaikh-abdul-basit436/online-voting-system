@@ -1,0 +1,60 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Online Voting System home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: OV
+        - strong [ref=e7]: Online Voting System
+      - button "Menu" [ref=e8]
+  - generic [ref=e9]: Academic Demo — Not a real election
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - paragraph [ref=e15]: Administration
+          - heading "Election overview" [level=1] [ref=e16]
+          - paragraph [ref=e17]: Current activity for Student Council Demo Election.
+        - generic [ref=e18]: Active
+      - generic [ref=e19]:
+        - article [ref=e20]:
+          - generic [ref=e21]: Total Voters
+          - strong [ref=e22]: "2"
+          - link "View register →" [ref=e23] [cursor=pointer]:
+            - /url: /admin/voters
+        - article [ref=e24]:
+          - generic [ref=e25]: Votes Cast
+          - strong [ref=e26]: "1"
+          - generic [ref=e27]: 50.0% participation
+        - article [ref=e28]:
+          - generic [ref=e29]: Not Voted
+          - strong [ref=e30]: "1"
+          - generic [ref=e31]: Registered voters remaining
+        - article [ref=e32]:
+          - generic [ref=e33]: Candidates
+          - strong [ref=e34]: "3"
+          - link "Manage candidates →" [ref=e35] [cursor=pointer]:
+            - /url: /admin/candidates
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: "%"
+            - generic [ref=e40]:
+              - heading "Participation" [level=2] [ref=e41]
+              - paragraph [ref=e42]: Votes cast against total registration.
+          - paragraph [ref=e45]:
+            - strong [ref=e46]: 50.0%
+            - text: turnout
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: ↗
+            - generic [ref=e50]:
+              - heading "Recent activity" [level=2] [ref=e51]
+              - paragraph [ref=e52]: Only submission times are shown.
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - generic [ref=e55]: Vote recorded
+              - time [ref=e56]: 2026-09-22 05:25:47
+  - contentinfo [ref=e57]:
+    - generic [ref=e58]:
+      - generic [ref=e59]: Online Voting System · B.Sc. IT Mini Project
+      - generic [ref=e60]: Student Council Demo Election
